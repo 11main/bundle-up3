@@ -29,7 +29,7 @@ normalizeUrl = (url) ->
   protocol = url.match(/^(http|https):\/\//)?[0]
   protocol = '' unless protocol?
   url = url.replace(protocol, '')
-  url = url.replace('\\', '/')
+  url = url.replace(/\\/g, '/')
   url = url.replace('//', '/')
   return protocol + url
 
