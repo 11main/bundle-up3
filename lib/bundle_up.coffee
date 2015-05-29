@@ -17,6 +17,7 @@ class BundleUp
 
     options.minifyCss = options.minifyCss || false
     options.minifyJs = options.minifyJs || false
+    options.compileAssets = options.compileAssets || false
     options.complete = options.complete || ->
 
     @app = app
@@ -35,10 +36,10 @@ class BundleUp
       @js.toBundles(done)
       @css.toBundles(done)
     else
-      # Compile files on-the-fly when not bundled
-      @app.use (new OnTheFlyCompiler(@js, @css, options.compilers)).middleware
+      if options.compileAssets
+        # Compile files on-the-fly when not bundled
+        @app.use (new OnTheFlyCompiler(@js, @css, options.compilers)).middleware
       options.complete()
-
 
     if(typeof @app.locals == 'object')
       # Support for Express 4
