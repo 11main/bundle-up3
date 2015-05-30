@@ -1,5 +1,5 @@
 {
-  "name": "bundle-up3",
+  "name": "@11main/bundle-up3",
   "author": {
     "name": "11Main",
     "url": "http://11main.com"
@@ -47,5 +47,8 @@
     "request": ">= 2.2.9",
     "jade": ">= 0.19.0",
     "async": "~0.1.22"
+  },
+    "publishConfig": {
+        "registry": "http://npm.11main.io"
   }
 }
