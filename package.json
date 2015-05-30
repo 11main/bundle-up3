@@ -5,7 +5,7 @@
     "url": "http://11main.com"
   },
   "description": "A simple asset manager middleware for connect",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": {
     "url": "https://github.com/11main/bundle-up3"
   },
@@ -48,7 +48,7 @@
     "jade": ">= 0.19.0",
     "async": "~0.1.22"
   },
-    "publishConfig": {
-        "registry": "http://npm.11main.io"
+  "publishConfig": {
+    "registry": "http://npm.11main.io"
   }
 }
