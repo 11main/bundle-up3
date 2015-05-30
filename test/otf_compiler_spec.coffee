@@ -17,6 +17,7 @@ describe 'OnTheFlyCompiler', ->
       staticRoot: __dirname + '/files/public/',
       staticUrlRoot:"/",
       bundle:false
+      compileAssets:true
     @app.use(express.static(__dirname + '/files/public/'))
 
     @app.listen(1338)

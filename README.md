@@ -6,9 +6,13 @@ Bundle up is a middleware for connect to manage all client-side assets in an org
 * NPM: https://www.npmjs.org/package/bundle-up3
 * GitHub: https://github.com/nodecode/bundle-up3
 
-Fork from bundle-up2 by @fgribreau
+Fork from bundle-up3 by @nodecode
 ------------------
-Changes in bundle-up3:
+Changes:
+* Fix url delimiter for Windows
+* add compileAssets option
+
+Changes in bundle-up3: (Fork from bundle-up(2) by @nodecode)
 
 * Fix Express 4
 * Added support for the `<script>` async attribute (with the option `asyncJs: true`)
@@ -39,6 +43,7 @@ BundleUp(app, assets, {
   staticRoot: __dirname + '/public/',
   staticUrlRoot: '/',
   bundle: true,
+  compileAssets: true,
   minifyCss: true,
   minifyJs: true,
   asyncJs: true,
@@ -99,7 +104,7 @@ By default this will render
 <script src='/min/app/client/main.js' type='text/javascript'></script>
 ```
 
-All assets will be compiled on-the-fly when `bundle:false` is set. Therefore the server never
+All assets will be compiled on-the-fly when `bundle:false` AND `compileAssets:true` are set. Therefore the server never
 needs to be restarted when editing the different assets.
 
 To render bundles `bundle:true` needs to be passed as a parameter to the middleware. This will concatenate all javascript and css files into bundles and render this:
